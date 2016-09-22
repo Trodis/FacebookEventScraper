@@ -88,14 +88,14 @@ def getSession():
     return session
 
 def getGraphAPICall(token, query, time):
-    url = "https://graph.facebook.com/search?"
+    url = "https://graph.facebook.com/v2.7/search?"
     payload = {'access_token': token, 'q': query, 'type': 'event', 'limit': '1000', 'since': time,
                'fields': 'city,state,country,description,id,start_time,end_time,name,place,street,\
                zip,ticket_uri,intested_count,attending_count'}
     return url, payload
 
 def getEvent(event_id):
-    url = "https://graph.facebook.com/%s?" %event_id
+    url = "https://graph.facebook.com/v2.7/%s?" %event_id
     payload = {'access_token': token, 'fields': 'name,id,attending_count,\
                interested_count,ticket_uri,place,start_time,end_time'}
     result = requests.get(url, params=payload)
@@ -149,7 +149,6 @@ def main():
     print "################################"
     print "Finished Scraping Events for the query: %s" %query
     print "Total scraped Events: %i" %len(id_list)
-    os.system("pause")
 
 def test(event_id):
     print json.dumps(getEvent(event_id).json(), indent=1)
