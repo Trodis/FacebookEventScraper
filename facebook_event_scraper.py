@@ -18,12 +18,12 @@ if _platform == "win32":
     os.environ["REQUESTS_CA_BUNDLE"] = os.path.join(os.getcwd(), "cacert.pem")
 
 #id,name,description,ticket_uri,start_time,place,end_time
-__author__ = "Ferhat Özmen"
-__copyright__ = "Copyright 2016"
-__license__ = "GPL"
+__author__ = ""
+__copyright__ = ""
+__license__ = ""
 __version__ = "0.1"
-__maintainer__ = "Ferhat Özmen"
-__email__ = "sreungbrmzra@gmail.com"
+__maintainer__ = ""
+__email__ = ""
 
 token = '' #Set your token here
 
